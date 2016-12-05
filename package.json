@@ -1,0 +1,31 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "hangman under angular 1.5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "perscrew",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.9",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babelify": "~5.0.3",
+    "browser-sync": "^1.7.1",
+    "browserify": "^6.3.3",
+    "gulp": "~3.8.10",
+    "gulp-rename": "^1.2.0",
+    "lodash": "^2.4.1",
+    "rimraf": "~2.2.8",
+    "stringify": "^5.1.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.1.1"
+  }
+}

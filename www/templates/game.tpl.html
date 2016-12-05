@@ -1,0 +1,19 @@
+<div>
+  <br/><br/>
+  Player name : {{::$ctrl.pseudo}} - Remaining try : {{$ctrl.chances}}
+  <br/>
+  <div class="hidden-word">{{$ctrl.getHiddenWord()}}</div>
+  <br/>
+  <form name="gameForm" ng-submit="$ctrl.findLetter(gameForm)" novalidate>
+    <div class="form-group">
+      <label>Seize a letter :</label>
+      <div class-"col-md-3">
+        <input type="text" maxlength="1" ng-model="$ctrl.letter" ng-required="true" class="form-control" placeholder="Lettre" />
+      </div>
+      <div class="text-center padding">
+        <p class="text-error" ng-show="gameForm.$invalid && gameForm.submited">The letter field is required</p>
+      </div>
+      <button class="btn btn-default" type="submit">Valider</button>
+    </div>
+  </form>
+</div>
