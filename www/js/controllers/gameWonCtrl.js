@@ -1,4 +1,4 @@
-export default class GameOverCtrl {
+export default class GameWonCtrl {
 
   constructor($rootRouter) {
     this.$rootRouter = $rootRouter;

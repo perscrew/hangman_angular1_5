@@ -6,3 +6,7 @@
   font-size: 65px;
   letter-spacing: 10px;
 }
+.letter-input {
+  width:80px !important;
+  margin:auto;
+}

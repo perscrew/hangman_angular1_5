@@ -1,7 +1,7 @@
-import template from '../../templates/game-over.tpl.html'
+import template from '../../templates/game-won.tpl.html'
 import GameFinishCtrl from '../controllers/gameFinishCtrl'
 
-export let GameOverComponent = {
+export let GameWonComponent = {
   template,
   controller: GameFinishCtrl
 }

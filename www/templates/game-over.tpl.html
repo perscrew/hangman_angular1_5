@@ -1,5 +1,10 @@
-<div>
-  Sorry {{::$ctrl.pseudo}}, you loose !
-  <br/><br/>
-  The word to find was <strong>{{$ctrl.word}}</strong>.
+<h1>You Loose ! :(</h1>
+<div class="row">
+  <div class="col-md-12">
+    Sorry {{::$ctrl.pseudo}}, you loose !
+    <br/><br/>
+    The word to find was <strong>{{$ctrl.word}}</strong>.
+  </div>
 </div>
+<br/>
+<play-again pseudo="$ctrl.pseudo"></play-again>

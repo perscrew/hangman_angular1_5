@@ -1,14 +1,18 @@
-<div class="col-md-12">
-  <form name="welcomeForm" ng-submit="$ctrl.play(welcomeForm)" novalidate>
-    <div class="form-group">
-      <label>Seize your pseudo :</label>
-      <div class-"col-md-3">
-        <input type="text" ng-model="$ctrl.pseudo" ng-required="true" class="form-control" placeholder="Pseudo">
+<h1>Welcome on Hangman</h1>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <form name="welcomeForm" ng-submit="$ctrl.play(welcomeForm)" class="form-horizontal" novalidate>
+      <div class="form-group">
+        <label>Seize your pseudo :</label>
+        <div class-"col-md-6">
+          <input type="text" ng-model="$ctrl.pseudo" ng-required="true" class="form-control" placeholder="Pseudo">
+        </div>
+        <div class="text-center padding">
+          <p class="text-error" ng-show="welcomeForm.$invalid && welcomeForm.submited">The pseudo field is required</p>
+        </div>
+        <br/>
+        <button class="btn btn-default" type="submit">Jouer</button>
       </div>
-      <div class="text-center padding">
-        <p class="text-error" ng-show="welcomeForm.$invalid && welcomeForm.submited">The pseudo field is required</p>
-      </div>
-      <button class="btn btn-default" type="submit">Jouer</button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>

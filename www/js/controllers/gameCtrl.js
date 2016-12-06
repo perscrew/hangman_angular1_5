@@ -1,8 +1,9 @@
 export default class GameCtrl {
 
-  constructor($rootRouter) {
+  constructor($rootRouter, letterService) {
     this.$rootRouter = $rootRouter;
-    this.word = "cacao";
+    this.letterService = letterService;
+    this.word = this.getWordToFind();
     this.chances = 6;
     this.letters = [];
   }
@@ -12,14 +13,34 @@ export default class GameCtrl {
   }
 
   getWordToFind() {
-
+    return this.letterService.generateWord();
   }
 
+  // Method to check if the word has been found
   isWordFound() {
-    //TODO
-    return false;
+    let nbLetterFound = 0;
+    let uniqueLetters = this.letters.filter((item, pos) => {
+      return this.letters.indexOf(item) == pos;
+    });
+    uniqueLetters.forEach((letter) => {
+      if (this.word.indexOf(letter) > -1)
+        nbLetterFound++;
+    });
+    return nbLetterFound == this.getUniqueLetterNumber();
   }
 
+  getUniqueLetterNumber() {
+    let wordArray = [];
+    for(var chr of this.word) {
+      wordArray.push(chr);
+    }
+    let uniqueLetters = wordArray.filter((item, pos) => {
+      return wordArray.indexOf(item) == pos;
+    });
+    return uniqueLetters.length;
+  }
+
+  // Display hidden word
   getHiddenWord() {
     let hiddenWord = "";
     for(var chr of this.word) {
@@ -32,18 +53,19 @@ export default class GameCtrl {
     return hiddenWord;
   }
 
+  // Method to submit a letter
   findLetter(form) {
     if (form.$valid) {
       if (this.word.indexOf(this.letter.toLowerCase()) > -1) {
         this.letters.push(this.letter.toLowerCase());
       } else {
-        // decriment chances
+        // decrement chances
         this.chances--;
       }
       this.letter = "";
 
       //check if it's game over or win
-      if (this.chances == 0) {
+      if (!this.chances) {
         this.gameOver();
       } else if (this.isWordFound()) {
         this.playerWin();
@@ -54,7 +76,7 @@ export default class GameCtrl {
   }
 
   playerWin() {
-    //TODO
+    this.$rootRouter.navigate(['GameWon', {pseudo: this.pseudo, word: this.word}]);
   }
 
   gameOver() {
@@ -62,4 +84,4 @@ export default class GameCtrl {
   }
 }
 
-GameCtrl.$inject = ['$rootRouter'];
+GameCtrl.$inject = ['$rootRouter', 'letterService'];
