@@ -34,19 +34,19 @@ gulp serve
 
 When you launch the app you arrive on the welcome page. You need to seize a pseudo in order to start the game.
 
-![Welcome page](/screenshots/welcome.png)
+![Welcome page](/screenshots/welcome.PNG)
 
 Once the pseudo is inquired you can start to play. You must seize a letter in order to discover the hidden word.
 
-![Game page](/screenshots/game.png)
+![Game page](/screenshots/game.PNG)
 
 If you find all the hidden letters you will be redirected to a congratulations page.
 
-![Won page](/screenshots/game-won.png)
+![Won page](/screenshots/game-won.PNG)
 
 If you don't find all the hidden letters with the 6 tries you will be redirected to a game over page.
 
-![Game over page](/screenshots/game-over.png)
+![Game over page](/screenshots/game-over.PNG)
 
 ## 4. Potential enhancements
 
